@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=chrom" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Staking</title>
+	<link href="css/style.css" rel="stylesheet"/>
+    <!--Material CDN-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet"/>
+  </head>
+  <body>
+
+	<div class="container">
+	
+    <!------------------ASIDE MENU------------------------->
+	<aside>
+	
+		<div class="top">
+		  <div class="logo">
+			<img src="images/ether.gif" alt="logo" />
+			<h2>STK<span class="danger">RTK</span></h2>
+		  </div>
+		</div>
+
+		<div class="sidebar">
+		
+			<a href="#" class="active">
+				<span class="material-icons-sharp"> insights </span>
+				<h3>Staking</h3>
+			</a>
+		  
+			<a href="#">
+				<span class="material-icons-sharp"> pix </span>
+				<h3>Crowdfunding</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp">currency_exchange</span>
+				<h3>Swap</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp"> camera </span>
+				<h3>NFT</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp"> how_to_vote </span>
+				<h3>Vote</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp"> volunteer_activism </span>
+				<h3>Lottery</h3>
+			</a>
+
+			<a href="#">
+				<span class="material-icons-sharp"> inventory </span>
+				<h3>Reports</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp"> contact_support </span>
+				<h3>Contact</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp"> dark_mode</span>
+				<h3>Theme</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp"> settings</span>
+				<h3>Settings</h3>
+			</a>
+			
+			<a href="#">
+				<span class="material-icons-sharp"> logout</span>
+				<h3>Logout</h3>
+			</a>
+		</div>
+	</aside>
+	
+	
+	<main>
+	
+		<h1>Parsa Bahmani DeFi Platform</h1>
+		<br>
+		<!--h3>Hold your token and get rewards by our stackingReward Token.</h3-->
+		
+		
+		<div class="insights">
+		
+			<!--------- Investors -->
+			<div class="investors">
+			  <span class="material-icons-sharp">people</span>
+				<div class="middle">
+				  <div class="left">
+					<h3>Active Investors</h3>
+					<h1 id="investors_count">*</h1>
+				  </div>
+				</div>
+				<small class="text-muted">Investors with some STK</small>
+			</div>
+			
+			<!---------- Staked Tokens ------>
+			<div class="staked">
+			<span class="material-icons-sharp">attach_money</span>
+			  <div class="middle">
+				<div class="left">
+				  <h3>Staked Tokens</h3>
+				  <h1 id="staked_tokens_count">*</h1>
+				</div>
+			  </div>
+			  <small class="text-muted">Total Tokens Staked by Investors</small>
+			</div> 
+
+			<!---------- reward rate ------>
+			<div class="reward">
+			  <span class="material-icons-sharp">stacked_line_chart</span>
+				<div class="middle">
+				  <div class="left">
+					<h3>Reward Rate</h3>
+					<h1 id="reward_rate">*</h1>
+				  </div>
+				</div>
+				<small class="text-muted"></small>
+			</div>
+			
+		</div> <!--END of insights-->
+		
+		
+		<div class="actions">
+			
+			<!--------- Stake --------->
+			<div class="stake">
+				<h2>Stake Your Tokens</h2>
+				<form>
+					<div class="slidecontainer">
+						<input id="stakeRange" type="range" min="1" max="10000" value="5000" class="slider"  oninput ="setStakeRange();">
+					</div>
+					<input id="stake_amount" type="text" name="stake" placeholder="How many STK...">
+					<button id="stake" type="button" class="btn btn-Info">Stake</button>
+					<button id="withdraw" type="button" class="btn btn-Warning">withdraw</button>
+				</form>
+			</div>
+
+			<!---------- getReward ---------->
+			<div class="getReward">
+				<h2>Get Your Staking Reward</h2>
+			  <button type="button" id="getReward" class="btn btn-success">getReward</button>
+			</div>
+			
+		</div> <!--END of actions-->
+		
+		
+	</main> <!--END of main-->
+
+
+  
+	<div class="right">
+
+		<div class="analytics">
+
+			<h2>Your Analytics</h2>
+
+			<div class="item">
+				<!--span class="material-icons-sharp">person_outline</span-->
+				<div class="right">
+					<div class="info">
+						<small id="current_account">*</small>
+						<span><b>STK balance: </b><small id="stk_balance">*</small></span> <br>
+						<span><b>RTK balance: </b><small id="rtk_balance">*</small></span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="item">
+				<span class="material-icons-sharp">attach_money</span>
+				<div class="right">
+					<div class="info">
+						<h3>Staked Tokens(STK)</h3>
+					</div>
+					<!--h4 id="user_staked_tokens" class="info">*</h4-->
+					<span><small id="user_staked_tokens">*</small></span>
+				</div>
+			</div>
+   
+			<div class="item">
+				<span class="material-icons-sharp">trending_up</span>
+				<div class="right">
+					<div class="info">
+						<h3>Rewards(RTK)</h3>
+					</div>
+					<!--h4 id="user_paid_reward" class="info">*</h4-->
+					<span><small id="user_paid_reward">*</small></span>
+				</div>
+			</div>
+		  
+		</div> <!-END OF analytics->
+		
+    </div> <!-END OF Right->
+	
+</div> <!-END OF container->
+<script src="js/jquery.min.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
